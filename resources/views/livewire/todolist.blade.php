@@ -30,10 +30,16 @@
         <div class="col-4">
             <div class="card shadow">
                 <h5 class="card-header">Rekap</h5>
-                <div class="card-body">
-                    Jumlah Todo : {{ $todos->count() }}<br />
-                    Jumlah Running : {{ $j0 }}<br />
-                    Jumlah Clear : {{ $j1 }}<br />
+                <div class="card-body h6">
+                    <span >
+                        Jumlah Todo : {{ $todos->count() }}
+                    </span> <br>
+                    <span >
+                        Jumlah Clear : {{ $j1 }}
+                    </span> <br>
+                    <span >
+                        Jumlah Running : {{ $j0 }}
+                    </span> <br>
                 </div>
             </div>
         </div>
