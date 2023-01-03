@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class Todolist extends Component
 {
-    public $status = 0,$rencana_kegiatan,$todos;
+    public $status = 0, $rencana_kegiatan, $todos;
 
     protected $rules = [
         'rencana_kegiatan' => 'required',
@@ -19,7 +19,15 @@ class Todolist extends Component
     public function render()
     {
         $this->todos = Todo::all();
-        return view('livewire.todolist');
+        $jumlah0 = Todo::whereStatus(0)->count();
+        $jumlah1 = Todo::whereStatus(1)->count();
+        return view(
+            'livewire.todolist',
+            [
+                'j0' => $jumlah0,
+                'j1' => $jumlah1
+            ]
+        );
     }
 
     public function simpan()
